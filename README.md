@@ -16,15 +16,15 @@ In this project you'll take take an almost completed e-commerce store and refact
 
 ## Project Set Up
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your team lead as collaborator on Github.
-- [ ] Clone your OWN version of the repository in your terminal
-- [ ] CD into the project base directory `cd react-shopping-cart`
-- [ ] Download project dependencies by running one of these two commands `yarn` or `npm install`
-- [ ] Using the same command tool (yarn or npm) start up the app using `yarn start` or `npm start`
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [✓] Create a forked copy of this project.
+- [✓] Add your team lead as collaborator on Github.
+- [✓] Clone your OWN version of the repository in your terminal
+- [✓] CD into the project base directory `cd react-shopping-cart`
+- [✓] Download project dependencies by running one of these two commands `yarn` or `npm install`
+- [✓] Using the same command tool (yarn or npm) start up the app using `yarn start` or `npm start`
+- [✓] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [✓] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [✓] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project.
 
@@ -43,7 +43,10 @@ Before you get started, please take a few minutes and get acquainted with this a
 
 - You'll also notice inside of our `App.js` we have 3 components. A navigation component and two route based components. Each of those components are all being passed either our `cart` state or `product` state as props, when we start to scale our application and add more props our codebase is going to start to become very cumbersome and will make our application hard to work with.
 
-- To combat this from happening we're going to refactor our application to use `Context API`, making it easier and more effiecent to access data across our application.
+- To combat this from happening we're going to refactor our application to use `Context API`, making it easier and more
+  efficient to access data across our application.
+
+<!-- effiecent to access data across our application. -->
 
 **Step 1 - Add item functionality**
 
