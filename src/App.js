@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import data from "./data";
+
+// hooks
+// import useLocalStorage from "./hooks/useLocalStorage";
 
 // Context
 import ProductContext from "./contexts/ProductContext";
+import CartContext from "./contexts/CartContext";
 
 // Components
 import Products from "./components/Products";
@@ -15,18 +19,23 @@ function App() {
   const [cart, setCart] = useState([]);
 
   const addItem = item => {
-    // add the given item to the cart
-    setCart([...cart, item]); // clone the cart
+    setCart([...cart, item]);
   };
-
+  const removeItem = id => {
+    console.log("remove item");
+    const filtered = cart.filter(item => item.id !== id);
+    setCart(filtered);
+  };
   return (
     <div className="App">
-      <Navigation cart={cart} />
-      <ProductContext.Provider value={[products, addItem]}>
-        <Switch>
-          <Route exact path="/" component={Products} />
-          <Route path="/cart" render={() => <ShoppingCart cart={cart} />} />
-        </Switch>
+      <CartContext.Provider value={{ cart }}>
+        <Navigation cart={cart} />
+      </CartContext.Provider>
+      <CartContext.Provider value={{ cart, removeItem }}>
+        <Route path="/cart" component={ShoppingCart} />
+      </CartContext.Provider>
+      <ProductContext.Provider value={{ products, addItem }}>
+        <Route exact path="/" component={Products} />
       </ProductContext.Provider>
     </div>
   );

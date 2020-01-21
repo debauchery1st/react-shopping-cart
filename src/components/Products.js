@@ -4,8 +4,12 @@ import ProductContext from "../contexts/ProductContext";
 // Components
 import Product from "./Product";
 
-const Products = props => {
-  const [products, addItem] = useContext(ProductContext);
+const Products = () => {
+  // var t0 = performance.now();
+  const { products, addItem } = useContext(ProductContext);
+  // var t1 = performance.now();
+  // console.log("destructuring took " + (t1 - t0) + " milliseconds.");
+
   return (
     <div className="products-container">
       {products.map(product => (
